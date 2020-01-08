@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>UI/MagicButton.qml</file>
+        <file>UI/MoveView.qml</file>
+        <file>UI/Effects/Diffusion.qml</file>
+        <file>UI/MagicEdit.qml</file>
+    </qresource>
+</RCC>
