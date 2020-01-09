@@ -5,5 +5,6 @@
         <file>UI/MoveView.qml</file>
         <file>UI/Effects/Diffusion.qml</file>
         <file>UI/MagicEdit.qml</file>
+        <file>Image/title_button_close.png</file>
     </qresource>
 </RCC>

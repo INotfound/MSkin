@@ -1,58 +1,71 @@
 import QtQuick 2.6
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
+import QtGraphicalEffects 1.12
 import "UI"
 Window {
     id: root
     visible: true
     width: 640
     height: 480
-    color: "#282E33"
+    color: "#00000000"
     title: qsTr("Hello World")
     flags: Qt.Window|Qt.FramelessWindowHint
-    MoveView{
-        id: moveView
-        root: root
-        tilteHeight: 20
-        tilteColor: "#3A4047"
-        anchors.fill: parent
-    }
 
+    MoveView{
+        root: root
+        id: moveView
+        tilteHeight: 20
+        color: "#FFFFFF"
+        tilteColor: "#F1F1F1"
+        width: parent.width -1
+        height: parent.height -1
+        anchors.centerIn: parent
+        MagicEdit {
+           id: edit
+           x: 146
+           y: 163
+           width: 180
+           height: 35
+           color: "#000000"
+           font.pointSize: 12
+        }
+
+        MagicButton {
+           id: button
+           objectName: "nButton"
+           width: 154
+           height: 50
+           anchors.bottom: parent.bottom
+           anchors.bottomMargin: 18
+           anchors.right: parent.right
+           anchors.rightMargin: 18
+           font.bold: true
+           defaultColor: "#45BFE7"
+           hoveredColor: "#3EBCDE"
+           pressedColor: "#24ADD3"
+        }
+
+        Image {
+            id: image
+            x: 608
+            y: 0
+            width: 18
+            height: 17
+            fillMode: Image.PreserveAspectFit
+            source: "Image/title_button_close.png"
+        }
+
+    }
 
     function  test()
     {
         console.log("test ok!");
     }
 
-    MagicEdit {
-        id: edit
-        x: 146
-        y: 163
-        width: 180
-        height: 35
-        font.pointSize: 12
-    }
 
-    MagicButton {
-        id: button
-        objectName: "nButton"
-        width: 154
-        height: 50
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 18
-        anchors.right: parent.right
-        anchors.rightMargin: 18
-        font.bold: true
-        defaultColor: "#4888C0"
-        hoveredColor: "#4F92C9"
-        pressedColor: "#61A5DC"
-    }
 }
 
 
 
-/*##^##
-Designer {
-    D{i:1;invisible:true}
-}
-##^##*/
+

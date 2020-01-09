@@ -19,7 +19,7 @@ Item {
         property var max: Math.max(root.width,root.height)*2
         property var mouseX: 0
         property var mouseY: 0
-        property var velocity:300
+        property var velocity:500
         SequentialAnimation{
             id:stopAnim
             ColorAnimation {
@@ -27,7 +27,7 @@ Item {
                 target: spread
                 properties:"color"
                 to: root.color
-                duration:500
+                duration:1000
              }
             onStopped: {
                 spread.visible = false

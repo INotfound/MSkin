@@ -2,26 +2,27 @@ import QtQuick 2.0
 
 
 Rectangle{
-    id: rectangle
     property var root
     property alias tilteColor: title.color
     property alias tilteHeight: title.height
-    color: "#00000000"
+    color: "#FFFFFF"
+    border.color: "#40000000"
     Rectangle {
         id: title
         height: 20
         color: "#3A4047"
-        anchors.right: parent.right
-        anchors.rightMargin: 0
-        anchors.left: parent.left
-        anchors.leftMargin: 0
         anchors.top: parent.top
-        anchors.topMargin: 0
+        anchors.left: parent.left
+        anchors.right: parent.right
+        anchors.topMargin: parent.border.width
+        anchors.leftMargin: parent.border.width
+        anchors.rightMargin: parent.border.width
     }
     MouseArea{
         id:centerArea
         anchors.fill: title
         property var mousePos
+
         onPressed: {
             mousePos = Qt.point(mouseX,mouseY);
         }
@@ -32,8 +33,6 @@ Rectangle{
                              root.height)
         }
     }
-
-
     MouseArea {
         id: rightArea
         width: 5

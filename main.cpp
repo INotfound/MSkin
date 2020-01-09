@@ -4,8 +4,8 @@
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-
+    //QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QCoreApplication::setAttribute(Qt::AA_UseSoftwareOpenGL);
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
    QObject *pButton = pRoot->findChild<QObject *>("nButton");
    if( pButton )
    {
-          QObject::connect(pButton,SIGNAL(onClicked()),pRoot,SLOT(test()));
+          QObject::connect(pButton,SIGNAL(clicked()),pRoot,SLOT(test()));
    }
     return app.exec();
 }
