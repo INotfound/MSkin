@@ -23,11 +23,13 @@ Window {
         anchors.centerIn: parent
         MagicEdit {
            id: edit
-           x: 146
-           y: 163
+           x: 281
+           y: 426
            width: 180
            height: 35
            color: "#000000"
+           font.family: "Courier"
+           renderType: Text.NativeRendering
            font.pointSize: 12
         }
 
@@ -60,9 +62,8 @@ Window {
 
     function  test()
     {
-        console.log("test ok!");
+        console.log("test ok! " + edit.text);
     }
-
 
 }
 
