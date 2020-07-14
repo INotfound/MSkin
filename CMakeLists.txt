@@ -1,32 +1,32 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(MSkin LANGUAGES CXX)
+project(Magic LANGUAGES CXX)
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+#set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
+set(CMAKE_PREFIX_PATH E:/Qt/Qt5.12.6/5.12.6/mingw73_64)
+set(CMAKE_BUILD_TYPE RelWithDebInfo)
 find_package(Qt5 COMPONENTS Core Quick REQUIRED)
 
 if(ANDROID)
-    add_library(MSkin SHARED main.cpp qml.qrc)
+    add_library(Magic SHARED main.cpp qml.qrc)
 else()
-    add_executable(MSkin
-        qml.qrc
-        main.cpp
-        MainWindow.h
-        MainWindow.cpp
-        )
+    add_executable(Magic WIN32 main.cpp qml.qrc)
 endif()
 
-target_compile_definitions(MSkin
+target_compile_definitions(Magic
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-target_link_libraries(MSkin
+target_link_libraries(Magic
   PRIVATE Qt5::Core Qt5::Quick)
 
 # QtCreator supports the following variables for Android, which are identical to qmake Android variables.

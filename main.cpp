@@ -1,11 +1,10 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "MainWindow.h"
 
 int main(int argc, char *argv[])
 {
-    //QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    QCoreApplication::setAttribute(Qt::AA_UseSoftwareOpenGL);
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
@@ -16,12 +15,6 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
     engine.load(url);
-    QObject *pRoot = engine.rootObjects().first();
 
-   QObject *pButton = pRoot->findChild<QObject *>("nButton");
-   if( pButton )
-   {
-          QObject::connect(pButton,SIGNAL(clicked()),pRoot,SLOT(test()));
-   }
     return app.exec();
 }

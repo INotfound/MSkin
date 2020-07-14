@@ -1,4 +1,4 @@
-import QtQuick 2.6
+import QtQuick 2.12
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.0
 import QtGraphicalEffects 1.12
@@ -18,18 +18,21 @@ Window {
         tilteHeight: 20
         color: "#FFFFFF"
         tilteColor: "#F1F1F1"
-        width: parent.width -1
-        height: parent.height -1
+        width: parent.width
+        height: parent.height
         anchors.centerIn: parent
+
         MagicEdit {
            id: edit
            x: 281
-           y: 426
+           y: 419
            width: 180
            height: 35
            color: "#000000"
-           font.family: "Courier"
-           renderType: Text.NativeRendering
+           anchors.bottom: parent.bottom
+           anchors.bottomMargin: 25
+           anchors.right: parent.right
+           anchors.rightMargin: 178
            font.pointSize: 12
         }
 
@@ -46,27 +49,22 @@ Window {
            defaultColor: "#45BFE7"
            hoveredColor: "#3EBCDE"
            pressedColor: "#24ADD3"
-        }
-
-        Image {
-            id: image
-            x: 608
-            y: 0
-            width: 18
-            height: 17
-            fillMode: Image.PreserveAspectFit
-            source: "Image/title_button_close.png"
+           contentText{
+               text: "定位"
+           }
+           onClicked: {
+           }
         }
 
     }
-
-    function  test()
-    {
-        console.log("test ok! " + edit.text);
-    }
-
 }
 
 
 
 
+
+/*##^##
+Designer {
+    D{i:2;anchors_height:370;anchors_width:601;anchors_x:20;anchors_y:20}
+}
+##^##*/

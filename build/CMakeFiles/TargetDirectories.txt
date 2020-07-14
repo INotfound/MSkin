@@ -1,0 +1,4 @@
+E:/Source/QtProject/Magic/build/CMakeFiles/Magic.dir
+E:/Source/QtProject/Magic/build/CMakeFiles/edit_cache.dir
+E:/Source/QtProject/Magic/build/CMakeFiles/rebuild_cache.dir
+E:/Source/QtProject/Magic/build/CMakeFiles/Magic_autogen.dir

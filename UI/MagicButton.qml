@@ -6,11 +6,13 @@ import "Effects"
 Button{
     id:button
     clip: true
+    property alias contentText: content
     property alias defaultColor: diffusion.defaultColor
     property alias hoveredColor: diffusion.hoveredColor
     property alias pressedColor: diffusion.pressedColor
+
     contentItem: Text {
-        text: qsTr("text")
+        id:content
         color: "#FFFFFF"
         font.bold: true
         font.pointSize: 15

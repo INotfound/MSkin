@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+7073be464ac867a05c7b3b7948edf98e CMakeFiles/Magic_autogen
+f68942f8be99aed099e8bd3b274561ff Magic_autogen/EWIEGA46WW/qrc_qml.cpp
