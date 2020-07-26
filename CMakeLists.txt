@@ -13,6 +13,9 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_PREFIX_PATH E:/Qt/Qt5.12.6/5.12.6/mingw73_64)
 set(CMAKE_BUILD_TYPE RelWithDebInfo)
+
+add_subdirectory(PluginTool/Launcher)
+
 find_package(Qt5 COMPONENTS Core Quick REQUIRED)
 
 if(ANDROID)
