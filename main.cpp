@@ -13,6 +13,8 @@ int main(int argc, char *argv[]){
     std::list<std::string> pluginPaths;
     Safe<Magic::ILogAppender> stdOutAppender(new Magic::StdOutLogAppender);
     Safe<Magic::ILogAppender> fileOutAppender(new Magic::FileLogAppender("log.txt"));
+    Safe<Magic::ILogAppender> htmlOutAppender(new Magic::HtmlLogAppender("log.html"));
+    Magic::LogAppenderMgr::GetInstance()->addILogAppender(htmlOutAppender);
     Magic::LogAppenderMgr::GetInstance()->addILogAppender(fileOutAppender);
     Magic::LogAppenderMgr::GetInstance()->addILogAppender(stdOutAppender);
     Safe<QQmlApplicationEngine> engine(new QQmlApplicationEngine);
