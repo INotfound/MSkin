@@ -5,6 +5,12 @@ set(Resouce MANIFEST)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+##########QT############
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+##########QT############
+
 ########################################################################################
 set(PLUGIN C:/Users/61419/Desktop/Magic)
 include_directories(
@@ -29,7 +35,14 @@ function(EMBEDFILE OUTFILE)
     )
     message("${PLUGIN}/Bin/EmbedFile")
     message("Now Generating EmbedFile{ ${ERROR} }...")
-    add_library(Launcher MODULE ${SRC} ${CMAKE_BINARY_DIR}/${OUTFILE}.cpp)
+    add_library(Launcher MODULE ${SRC} ${CMAKE_BINARY_DIR}/${OUTFILE}.cpp ${PROJECT_SOURCE_DIR}/qml.qrc)
+
+    find_package(Qt5 COMPONENTS Core Quick REQUIRED)
+    target_compile_definitions(Launcher
+        PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
+    target_link_libraries(Launcher
+        PRIVATE Qt5::Core Qt5::Quick)
+        
 endfunction(EMBEDFILE)
 
 EMBEDFILE(${Resouce})

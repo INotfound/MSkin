@@ -1,0 +1,33 @@
+{
+    "env": {
+        "QtPath": "E:/Qt/Qt5.12.6/5.12.6/mingw73_64/include",
+        "QtIncludePath": [
+            "${QtPath}",
+            "${QtPath}/QtGui",
+            "${QtPath}/QtQml",
+            "${QtPath}/QtCore",
+            "${QtPath}/QtQuick",
+            "${QtPath}/QtNetwork",
+            "${QtPath}/QtConcurrent"
+        ]
+    },
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${QtIncludePath}",
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "intelliSenseMode": "${default}",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"
+        }
+    ],
+    "version": 4
+}

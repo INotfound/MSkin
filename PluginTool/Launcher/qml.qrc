@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>../../UI/MagicButton.qml</file>
+        <file>../../UI/MoveView.qml</file>
+        <file>../../UI/MagicEdit.qml</file>
+        <file>../../UI/Effects/Diffusion.qml</file>
+        <file>../../UI/Image/title_button_close.png</file>
+        <file>../../UI/Image/title_button_h_close.png</file>
+        <file>../../UI/Image/title_button_restore.png</file>
+        <file>../../UI/Image/title_button_maximize.png</file>
+        <file>../../UI/Image/title_button_minimize.png</file>
+    </qresource>
+</RCC>

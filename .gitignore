@@ -31,7 +31,6 @@
 *.out
 *.app
 /.vs
-/.vscode
 /out
 /build
 /Bin/*
